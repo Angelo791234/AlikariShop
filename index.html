@@ -10,6 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyBRcK5h4HuJY6ekGyDgTbBrmSl3kB-Z0Ts",
+    authDomain: "alikari-shop.firebaseapp.com",
+    projectId: "alikari-shop",
+    storageBucket: "alikari-shop.firebasestorage.app",
+    messagingSenderId: "564591095824",
+    appId: "1:564591095824:web:47a4ce3c3249de48499a95"
+  });
+  window._db = firebase.firestore();
+  window.firebaseReady = true;
+</script>
 <style>
 
 /* ============================================================
