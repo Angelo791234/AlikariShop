@@ -85,11 +85,11 @@ input, select{font-family:inherit;}
   text-align:center;
 }
 .login-logo-wrap{
-  width:220px;height:90px;border-radius:14px;
-  background:#000;
-  border:1px solid var(--border-light);
+  width:260px;height:110px;border-radius:0;
+  background:transparent;
+  border:none;
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 16px;overflow:hidden;padding:6px;
+  margin:0 auto 16px;overflow:hidden;padding:0;
 }
 .login-logo-wrap img{width:100%;height:100%;object-fit:contain;}
 .login-brand{display:none;}
@@ -766,7 +766,7 @@ input, select{font-family:inherit;}
 .modal-actions{display:flex;gap:10px;margin-top:18px;}
 .modal-actions button{flex:1;}
 
-.confirm-icon{font-size:42px;text-align:center;margin-bottom:10px;}
+.confirm-icon{font-size:42px;text-align:center;margin-bottom:10px;display:flex;justify-content:center;align-items:center;min-height:44px;}
 .confirm-text{text-align:center;font-size:14px;margin-bottom:18px;line-height:1.5;}
 .confirm-text img{display:block;margin:0 auto 10px;}
 
@@ -849,7 +849,7 @@ input, select{font-family:inherit;}
 
     <button class="btn-login" onclick="doLogin()">✨ Ingresar</button>
     <div class="login-error" id="loginError"></div>
-    <div class="login-hint">Usuarios: Mirella · Angel<br>Contraseñas: 1234 / 2819</div>
+    <!-- hint de credenciales eliminado por seguridad -->
   </div>
 </div>
 
@@ -1562,7 +1562,7 @@ function S(n) {
 
 function defaultData() {
   return {
-    categorias: ['Fitness','Cardio','Suplementos','Indumentaria','Decoración','Iluminación','Accesorios','Otros'],
+    categorias: ['Fitness','Cardio','Suplementos','Indumentaria','Decoración','Iluminación','Accesorios','Hogar','Otros'],
     productos: [
       { id:'p1',  nombre:'Mancuernas 5kg (Par)',      categoria:'Fitness',      precio:85,   stock:15, marca:'PowerFit',     sku:'FIT-001', desc:'Par de mancuernas de hierro recubiertas en goma', foto:null, vendidos:18 },
       { id:'p2',  nombre:'Cuerda para Saltar',         categoria:'Cardio',       precio:25,   stock:2,  marca:'JumpPro',      sku:'CAR-001', desc:'Cuerda ajustable con rodamientos de alta velocidad', foto:null, vendidos:6 },
@@ -1575,7 +1575,55 @@ function defaultData() {
       { id:'p9',  nombre:'Termo Deportivo 1L',         categoria:'Accesorios',   precio:42,   stock:9,  marca:'Alikari',      sku:'ACC-001', desc:'Termo de acero inoxidable con tapa hermética', foto:null, vendidos:7 },
       { id:'p10', nombre:'Set de Pesas Ajustables',    categoria:'Fitness',      precio:180,  stock:3,  marca:'PowerFit',     sku:'FIT-004', desc:'Set de pesas ajustables de 2 a 10kg', foto:null, vendidos:4 },
       { id:'p11', nombre:'Espejo Decorativo Redondo',  categoria:'Decoración',   precio:95,   stock:4,  marca:'HomeStyle',    sku:'DEC-002', desc:'Espejo de pared con marco metálico dorado', foto:null, vendidos:2 },
-      { id:'p12', nombre:'Tapete de Yoga',             categoria:'Fitness',      precio:60,   stock:7,  marca:'PowerFit',     sku:'FIT-005', desc:'Tapete antideslizante 6mm de grosor', foto:null, vendidos:13 }
+      { id:'p12', nombre:'Tapete de Yoga',             categoria:'Fitness',      precio:60,   stock:7,  marca:'PowerFit',     sku:'FIT-005', desc:'Tapete antideslizante 6mm de grosor', foto:null, vendidos:13 },
+      { id:'p200', nombre:'Salero Acrilico Especiero Condimentero Multifuncional pack x6', marca:'Alikari Shop', categoria:'Hogar', precio:44.9, stock:10, foto:null, vendidos:0 },
+      { id:'p201', nombre:'Foam Roller 35cm Yoga Negro SET de 4', marca:'Alikari Shop', categoria:'Fitness', precio:65.0, stock:10, foto:null, vendidos:0 },
+      { id:'p202', nombre:'Bolsa Organizadora Hermetico Al Vacio 50x60', marca:'Alikari Shop', categoria:'Accesorios', precio:24.0, stock:10, foto:null, vendidos:0 },
+      { id:'p203', nombre:'Muñequera con ferula palmar Derecha Talla L', marca:'Alikari Shop', categoria:'Fitness', precio:55.0, stock:10, foto:null, vendidos:0 },
+      { id:'p204', nombre:'Juguete Estimulación para Bebe Musical Acordion Zorro', marca:'Alikari Shop', categoria:'Otros', precio:59.99, stock:10, foto:null, vendidos:0 },
+      { id:'p205', nombre:'Guantes de BOX Azul Niños 8 ONZAS 6 A 10 Años', marca:'Alikari Shop', categoria:'Fitness', precio:110.0, stock:10, foto:null, vendidos:0 },
+      { id:'p206', nombre:'Base Estabilizadora para Lavadora Secadora Muebles Color Gris', marca:'Alikari Shop', categoria:'Accesorios', precio:24.9, stock:10, foto:null, vendidos:0 },
+      { id:'p207', nombre:'Guantes para Pesas GYM Dama Mesh Talla S Rosado', marca:'Alikari Shop', categoria:'Fitness', precio:65.0, stock:10, foto:null, vendidos:0 },
+      { id:'p208', nombre:'Almohadilla de Gel Silicona Relajante Transpirable Alivia Dolor de Pie 2 pares', marca:'Alikari Shop', categoria:'Hogar', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p209', nombre:'Guantes Deportivo para Pesas con Muñequera Talla M Rojo', marca:'Alikari Shop', categoria:'Fitness', precio:35.0, stock:10, foto:null, vendidos:0 },
+      { id:'p210', nombre:'Ferula para Dedo Pulgar Ferula Muñeca Neopreno 6879', marca:'Alikari Shop', categoria:'Fitness', precio:35.0, stock:10, foto:null, vendidos:0 },
+      { id:'p211', nombre:'Protector Adhesivo Antedeslizante Pata Muebles Multifuncional x18', marca:'Alikari Shop', categoria:'Accesorios', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p212', nombre:'Straps Con Gancho para Levantamiento Pesas Peso Muerto', marca:'Alikari Shop', categoria:'Fitness', precio:55.0, stock:10, foto:null, vendidos:0 },
+      { id:'p213', nombre:'Guantes Deportivo para Pesas con Muñequera Talla M', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p214', nombre:'Mandil Babero Manga Larga Niños 3 a 6 años Cocodrilo', marca:'Alikari Shop', categoria:'Otros', precio:34.0, stock:10, foto:null, vendidos:0 },
+      { id:'p215', nombre:'Canguro Riñonera con Soporte para Botella de Agua CNA01', marca:'Alikari Shop', categoria:'Accesorios', precio:35.0, stock:10, foto:null, vendidos:0 },
+      { id:'p216', nombre:'Mitones para Levantamiento de Pesas con Muñequera Talla M A', marca:'Alikari Shop', categoria:'Fitness', precio:39.9, stock:10, foto:null, vendidos:0 },
+      { id:'p217', nombre:'3 Clips sellador de bolsa Abrazadera Color Celeste', marca:'Alikari Shop', categoria:'Accesorios', precio:19.9, stock:10, foto:null, vendidos:0 },
+      { id:'p218', nombre:'Soporte para el Cuello Cuellera Terapia Magnetica6275', marca:'Alikari Shop', categoria:'Fitness', precio:29.0, stock:10, foto:null, vendidos:0 },
+      { id:'p219', nombre:'Canguro Riñonera con Soporte para Botella de Agua CNA01 v2', marca:'Alikari Shop', categoria:'Accesorios', precio:45.0, stock:10, foto:null, vendidos:0 },
+      { id:'p220', nombre:'Soporte Rodillera Meñisquera 9153 Impacto Ajustable', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p221', nombre:'Ladrillo Block de Yoga para Pilate Negro', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p222', nombre:'Rueda Abdominal Doble Color Rosado Entrenamiento Fitness', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p223', nombre:'Vendas de Box Uppercut 4.5 Metros Camuflado Tricolor', marca:'Alikari Shop', categoria:'Fitness', precio:34.9, stock:10, foto:null, vendidos:0 },
+      { id:'p224', nombre:'Rodillera Menisquera Soporte Doble Rotula 9006', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p225', nombre:'Vendas de Box Uppercut 4.5 Metros Tricolor', marca:'Alikari Shop', categoria:'Fitness', precio:34.9, stock:10, foto:null, vendidos:0 },
+      { id:'p226', nombre:'Destapador Multifuncional Abre Botellas Frascos', marca:'Alikari Shop', categoria:'Accesorios', precio:17.9, stock:10, foto:null, vendidos:0 },
+      { id:'p227', nombre:'Esponja Cepillo Relanje para Baño Morado', marca:'Alikari Shop', categoria:'Accesorios', precio:19.9, stock:10, foto:null, vendidos:0 },
+      { id:'p228', nombre:'Almohadilla Plantilla de Gel Silicona 6 pcs para Zapatos', marca:'Alikari Shop', categoria:'Hogar', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p229', nombre:'Calzador de Mango Largo Azul 39 cm largo', marca:'Alikari Shop', categoria:'Accesorios', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p230', nombre:'Guante de box profesional 12 onzas wsd blanco Rojo fitness', marca:'Alikari Shop', categoria:'Fitness', precio:120.0, stock:10, foto:null, vendidos:0 },
+      { id:'p231', nombre:'Guante de box profesional 12 onzas Rojo fitness', marca:'Alikari Shop', categoria:'Fitness', precio:120.0, stock:10, foto:null, vendidos:0 },
+      { id:'p232', nombre:'Juguete Sensorial Pelotas Textura para bebes', marca:'Alikari Shop', categoria:'Otros', precio:39.9, stock:10, foto:null, vendidos:0 },
+      { id:'p233', nombre:'Guantes de ejercicio deportivo antideslizante moto gym', marca:'Alikari Shop', categoria:'Fitness', precio:65.0, stock:10, foto:null, vendidos:0 },
+      { id:'p234', nombre:'Mitones para pesas guantes con muñequera deportivos', marca:'Alikari Shop', categoria:'Fitness', precio:39.0, stock:10, foto:null, vendidos:0 },
+      { id:'p235', nombre:'Bolsa de Almacenamiento de Felpa Organizador de Toalla Monedero Marron', marca:'Alikari Shop', categoria:'Accesorios', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p236', nombre:'Mochila de Proteccion para Bebe Cabeza Espalda Conejo', marca:'Alikari Shop', categoria:'Accesorios', precio:49.0, stock:10, foto:null, vendidos:0 },
+      { id:'p237', nombre:'Rack Esquinero Triangular 4 pisos Multifuncional Blanco', marca:'Alikari Shop', categoria:'Accesorios', precio:49.9, stock:10, foto:null, vendidos:0 },
+      { id:'p238', nombre:'Urinario Portatil Niños Elefante Colores Rosado', marca:'Alikari Shop', categoria:'Otros', precio:28.9, stock:10, foto:null, vendidos:0 },
+      { id:'p239', nombre:'Straps con muñequera silicona antideslizante amarillo', marca:'Alikari Shop', categoria:'Fitness', precio:55.0, stock:10, foto:null, vendidos:0 },
+      { id:'p240', nombre:'Hand Grip Verde 5kg 60kg', marca:'Alikari Shop', categoria:'Fitness', precio:19.0, stock:10, foto:null, vendidos:0 },
+      { id:'p241', nombre:'Par Muñequera Ajustables Lesion Fitness Pega Pega Jimbra 8000 talla Standard', marca:'Alikari Shop', categoria:'Fitness', precio:39.99, stock:10, foto:null, vendidos:0 },
+      { id:'p242', nombre:'Salero Acrilico Especiero Condimentero Multifuncional', marca:'Alikari Shop', categoria:'Hogar', precio:19.9, stock:10, foto:null, vendidos:0 },
+      { id:'p243', nombre:'Faja Dorso Lumbar Proteccion de Columna Talla XL', marca:'Alikari Shop', categoria:'Fitness', precio:89.0, stock:10, foto:null, vendidos:0 },
+      { id:'p244', nombre:'Plantilla de Gel de Adhesiva para Tacones Suave', marca:'Alikari Shop', categoria:'Hogar', precio:24.9, stock:10, foto:null, vendidos:0 },
+      { id:'p245', nombre:'Rodillera Regulable para Ejercicios 3Velcro Lesion Dolor', marca:'Alikari Shop', categoria:'Fitness', precio:35.0, stock:10, foto:null, vendidos:0 },
+      { id:'p246', nombre:'Faja Soporte Sacro Lumbar Talla L Varilla de Aluminio', marca:'Alikari Shop', categoria:'Fitness', precio:99.0, stock:10, foto:null, vendidos:0 },
+      { id:'p247', nombre:'Staps mute soporte de muñeca para levantamiento de pesa pro', marca:'Alikari Shop', categoria:'Fitness', precio:55.0, stock:10, foto:null, vendidos:0 }
     ],
     ventas: [],
     usuarios: [
@@ -1630,6 +1678,23 @@ function initData() {
     if (!parsed.categorias) parsed.categorias = defaultData().categorias;
     if (!parsed.productos) parsed.productos = defaultData().productos;
     if (!parsed.ventas) parsed.ventas = [];
+    // Migración: agregar nuevos productos del defaultData que no existan aún
+    const defaultProds = defaultData().productos;
+    const existingIds = new Set((parsed.productos || []).map(p => p.id));
+    const newProds = defaultProds.filter(p => !existingIds.has(p.id));
+    if (newProds.length > 0) {
+      parsed.productos = [...(parsed.productos || []), ...newProds];
+      localStorage.setItem(STORE_KEY, JSON.stringify(parsed));
+    }
+    // Migración: agregar categorías nuevas
+    const defaultCats = defaultData().categorias;
+    if (parsed.categorias) {
+      const missingCats = defaultCats.filter(c => !parsed.categorias.includes(c));
+      if (missingCats.length > 0) {
+        parsed.categorias = [...parsed.categorias, ...missingCats];
+        localStorage.setItem(STORE_KEY, JSON.stringify(parsed));
+      }
+    }
     return parsed;
   } catch(e) {
     const d = defaultData();
@@ -2332,7 +2397,7 @@ function procesarVenta() {
   }
 
   mostrarConfirm(
-    `<img src="${LOGO_DATA_URI}" alt="Alikari Shop" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">`,
+    `<img src="${LOGO_BASE64}" alt="Alikari Shop" style="width:180px;height:72px;object-fit:contain;background:#0f0f0f;border-radius:12px;padding:10px;display:block;margin:0 auto 4px;">`,
     `¿Confirmar venta por ${S(total)}?`,
     () => {
       const d2 = initData();
@@ -2386,10 +2451,11 @@ async function generarTicket(venta) {
   const W = 380;
   const PAD = 20;
   const LOGO_SIZE = 90;
+  const LOGO_W = 180; const LOGO_H = 75;
   const tieneCliente = venta.cliente && venta.cliente.trim().length > 0;
 
   // Altura dinámica calculada sumando cada bloque real del recibo:
-  const ALTURA_HEADER = 20 + LOGO_SIZE + 14 + 13 + 18 + 20; // logo + textos + línea
+  const ALTURA_HEADER = 20 + LOGO_H + 10 + 14 + 18 + 20; // logo + lineas info + separador
   const ALTURA_DATOS_VENTA = 17 + 15 + (tieneCliente ? 15 : 0) + 15 + 18 + 20; // N°, fecha, cliente?, vendedor, pago, línea
   const ALTURA_ITEMS = venta.items.length * 24;
   const ALTURA_TOTAL = 24 + 36; // línea + total
@@ -2400,17 +2466,17 @@ async function generarTicket(venta) {
   canvas.height = height;
   const ctx = canvas.getContext('2d');
 
-  ctx.fillStyle = '#fff';
+  ctx.fillStyle = '#0f0f0f';
   ctx.fillRect(0, 0, W, height);
 
   function txt(t, x, y, font, color, align) {
     ctx.font = font;
-    ctx.fillStyle = color || '#000';
+    ctx.fillStyle = color || '#ffffff';
     ctx.textAlign = align || 'left';
     ctx.fillText(t, x, y);
   }
   function line(y) {
-    ctx.strokeStyle = '#ddd';
+    ctx.strokeStyle = '#2a2a2a';
     ctx.setLineDash([4,4]);
     ctx.beginPath();
     ctx.moveTo(PAD, y);
@@ -2422,42 +2488,42 @@ async function generarTicket(venta) {
   let cy = 20;
   const logoImg = await cargarImagenLogo();
   if (logoImg) {
-    ctx.drawImage(logoImg, W/2 - LOGO_SIZE/2, cy, LOGO_SIZE, LOGO_SIZE);
-    cy += LOGO_SIZE + 14;
+    // Logo directo sobre fondo oscuro
+    ctx.drawImage(logoImg, W/2 - LOGO_W/2, cy, LOGO_W, LOGO_H);
+    cy += LOGO_H + 16;
   } else {
     cy += 14;
-    txt('ALIKARI SHOP', W/2, cy, '900 22px Arial', '#3d1a2a', 'center'); cy += 20;
+    txt('ALIKARI SHOP', W/2, cy, '900 22px Arial', '#ffffff', 'center'); cy += 20;
   }
-  txt('Tortas & Cupcakes', W/2, cy, '700 11px Arial', '#e8698a', 'center'); cy += 13;
-  txt('@midulcemia', W/2, cy, '400 10px Arial', '#a08090', 'center'); cy += 18;
+  txt('DEPORTE · DECO · HOGAR', W/2, cy, '800 12px Arial', '#8bc34a', 'center'); cy += 20;
   line(cy); cy += 20;
 
-  txt('N° ' + venta.id.slice(-8).toUpperCase(), PAD, cy, '700 11px Arial', '#000'); cy += 17;
-  txt(fechaLegible(venta.fecha) + ' — ' + venta.hora, PAD, cy, '400 10px Arial', '#888'); cy += 15;
+  txt('N° ' + venta.id.slice(-8).toUpperCase(), PAD, cy, '800 13px Arial', '#ffffff'); cy += 17;
+  txt(fechaLegible(venta.fecha) + ' — ' + venta.hora, PAD, cy, '400 11px Arial', '#ffffff'); cy += 15;
   if (tieneCliente) {
-    txt('Cliente: ' + venta.cliente, PAD, cy, '400 10px Arial', '#888'); cy += 15;
+    txt('Cliente: ' + venta.cliente, PAD, cy, '400 11px Arial', '#ffffff'); cy += 15;
   }
-  txt('Vendedor: ' + venta.vendedor, PAD, cy, '400 10px Arial', '#888'); cy += 15;
+  txt('Vendedor: ' + venta.vendedor, PAD, cy, '400 11px Arial', '#ffffff'); cy += 15;
   const pagoTexto = venta.metodoPago === 'qr' ? 'Yape / Plin' : venta.metodoPago === 'tarjeta' ? 'Tarjeta' : 'Efectivo';
-  txt('Pago: ' + pagoTexto, PAD, cy, '400 10px Arial', '#888'); cy += 18;
+  txt('Pago: ' + pagoTexto, PAD, cy, '400 11px Arial', '#ffffff'); cy += 18;
   line(cy); cy += 20;
 
   venta.items.forEach(it => {
-    txt(it.qty + 'x ' + it.nombre, PAD, cy, '400 11px Arial', '#222');
-    txt(S(it.subtotal), W-PAD, cy, '700 11px Arial', '#222', 'right');
+    txt(it.qty + 'x ' + it.nombre, PAD, cy, '500 12px Arial', '#ffffff');
+    txt(S(it.subtotal), W-PAD, cy, '700 12px Arial', '#ffffff', 'right');
     cy += 24;
   });
 
   line(cy); cy += 24;
-  txt('TOTAL', PAD, cy, '900 17px Arial', '#000');
-  txt(S(venta.total), W-PAD, cy, '900 17px Arial', '#e8698a', 'right');
+  txt('TOTAL', PAD, cy, '900 18px Arial', '#ffffff');
+  txt(S(venta.total), W-PAD, cy, '900 18px Arial', '#8bc34a', 'right');
   cy += 36;
 
   // Línea decorativa
-  txt('· · · · · · · · · · · · ·', W/2, cy, '400 10px Arial', '#f0a3b8', 'center'); cy += 18;
-  txt('¡Gracias por tu compra!', W/2, cy, '700 12px Arial', '#3d1a2a', 'center'); cy += 16;
-  txt('Alikari Shop — Tortas & Cupcakes', W/2, cy, '400 10px Arial', '#a08090', 'center'); cy += 14;
-  txt('¡Que lo disfrutes! 🎂', W/2, cy, '400 10px Arial', '#e8698a', 'center');
+  txt('· · · · · · · · · · · · ·', W/2, cy, '400 10px Arial', '#333', 'center'); cy += 18;
+  txt('¡Gracias por tu compra!', W/2, cy, '800 14px Arial', '#8bc34a', 'center'); cy += 16;
+  txt('Alikari Shop — Deporte · Deco · Hogar', W/2, cy, '400 11px Arial', '#ffffff', 'center'); cy += 14;
+  txt('¡Vuelve pronto! 💪', W/2, cy, '500 12px Arial', '#8bc34a', 'center');
 
   const url = canvas.toDataURL('image/png');
 
